@@ -23,7 +23,7 @@
       logo: "//cdn.staticaly.com/gh/codeslive/images-pages@main/2023/202305101251982.webp", // logo
       coverpage: true, // 是否开启封面 true/false
       coverpage: "cover.md", // 文档封面
-      routerMode: "hash", // 路由模式
+      routerMode: "history", // 路由模式
       // loadNavbar: false, // 是否加载导航栏 true/false
       onlyCover: true, // 是否只显示封面 true/false
     }
@@ -41,3 +41,14 @@
 <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
 <!-- 返回顶部 -->
 <script src="//cdn.jsdelivr.net/gh/Sumsung524/docsify-backTop/dist/docsify-backTop.min.js"></script>
+
+
+<script>
+  if (window.location.href.indexOf('mibook.codelive.top') !== -1) {
+    window.onload = function() {
+      var path = window.location.pathname;
+      path = path === '/' ? '/index.html' : path + '/index.html';
+      window.location.href = window.location.href.replace(window.location.pathname, path);
+    }
+  }
+</script>
